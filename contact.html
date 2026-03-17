@@ -24,18 +24,21 @@
     <p>Email: <a href="mailto:mert.erol1@outlook.com">mert.erol1@outlook.com</a></p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/erolmert" target="_blank">linkedin.com/in/erolmert</a></p>
 
-    <form action="https://formspree.io/f/xqeyganp" method="POST" enctype="multipart/form-data">
-      <label for="subject">Konu:</label><br>
-      <input type="text" id="subject" name="subject" required><br><br>
-
-      <label for="message">Mesaj:</label><br>
-      <textarea id="message" name="message" rows="5" required></textarea><br><br>
-
-      <label for="file">Dosya ekle:</label><br>
-      <input type="file" id="file" name="file"><br><br>
-
-      <button type="submit">Gönder</button>
-    </form>
+    <form
+  action="https://formspree.io/f/xqeyganp"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
+</form>
   </main>
 </body>
 </html>
