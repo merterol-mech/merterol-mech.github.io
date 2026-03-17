@@ -1,4 +1,6 @@
-/* Reset ve temel stil */
+/* ------------------------------
+   Reset & Temel Ayarlar
+------------------------------ */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,29 +9,41 @@
 
 body {
   font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+  line-height: 1.6;
   background: #f7f8fa;
   color: #333;
-  line-height: 1.6;
 }
 
-/* Navbar */
+/* ------------------------------
+   Navbar
+------------------------------ */
 header {
   background: #1f2937;
   color: #fff;
-  padding: 15px 0;
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
-nav ul {
+.nav-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.nav-links {
+  display: flex;
   list-style: none;
   gap: 25px;
 }
 
-nav ul li a {
+.nav-links li a {
   color: #fff;
   text-decoration: none;
   font-weight: 600;
@@ -37,26 +51,43 @@ nav ul li a {
   transition: all 0.2s ease;
 }
 
-nav ul li a:hover {
+.nav-links li a:hover {
   background: #3b82f6;
   border-radius: 5px;
 }
 
-/* Main içerik */
+/* ------------------------------
+   Hamburger
+------------------------------ */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ------------------------------
+   Main Content
+------------------------------ */
 main {
   max-width: 1000px;
   margin: 40px auto;
   padding: 0 20px;
 }
 
-/* Başlıklar */
 h1, h2, h3 {
   color: #111827;
   margin-bottom: 20px;
 }
 
-/* PDF container (resume için) */
-#pdf-container, .resume-img {
+p {
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+/* ------------------------------
+   PDF Container
+------------------------------ */
+#pdf-container {
   width: 100%;
   min-height: 80vh;
   overflow: auto;
@@ -68,14 +99,20 @@ h1, h2, h3 {
   margin-bottom: 30px;
 }
 
-/* Form stili (contact) */
+/* ------------------------------
+   Contact Form
+------------------------------ */
 form {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  margin-top: 20px;
 }
 
-input[type="text"], input[type="email"], textarea, input[type="file"] {
+input[type="text"],
+input[type="email"],
+textarea,
+input[type="file"] {
   padding: 10px;
   border: 1px solid #d1d5db;
   border-radius: 5px;
@@ -102,10 +139,34 @@ button:hover {
   background: #2563eb;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  nav ul {
+/* ------------------------------
+   Mobil Responsiveness
+------------------------------ */
+@media(max-width:768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 200px;
+    background: #1f2937;
     flex-direction: column;
-    gap: 15px;
+    align-items: start;
+    padding-top: 60px;
+    gap: 20px;
+    transition: right 0.3s ease;
+  }
+
+  .nav-links li a {
+    font-size: 18px;
+    padding-left: 20px;
+  }
+
+  .nav-links.active {
+    right: 0;
   }
 }
