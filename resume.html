@@ -6,34 +6,60 @@
 <title>Resume</title>
 <link rel="stylesheet" href="style.css">
 <style>
-html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
-#pdf-container { width: 100%; height: 100vh; overflow: auto; background: #f5f5f5; text-align: center; }
-canvas { margin: 10px 0; box-shadow: 0 0 5px rgba(0,0,0,0.2); }
+  body { margin:0; font-family: Arial, sans-serif; background:#f5f5f5; color:#333; }
+  header { background:#1a73e8; color:white; padding:10px 0; }
+  nav ul { display:flex; justify-content:center; list-style:none; margin:0; padding:0; }
+  nav ul li { margin:0 15px; }
+  nav ul li a { color:white; text-decoration:none; font-weight:bold; }
+  nav ul li a:hover { text-decoration:underline; }
+
+  main { width:90%; max-width:900px; margin:20px auto; }
+
+  #pdf-container { width:100%; height:80vh; overflow:auto; text-align:center; border:1px solid #ccc; box-shadow:0 0 10px rgba(0,0,0,0.1); }
+  canvas { margin:10px 0; }
 </style>
 </head>
 <body>
 
-<div id="pdf-container"></div>
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <h1>My Resume</h1>
+  <div id="pdf-container"></div>
+</main>
 
 <script src="pdfjs/pdf.js"></script>
 <script>
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdfjs/pdf.worker.js';
-const url = 'resume.pdf';
-const container = document.getElementById('pdf-container');
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdfjs/pdf.worker.js';
+  const url = 'resume.pdf';
+  const container = document.getElementById('pdf-container');
 
-pdfjsLib.getDocument(url).promise.then(pdf => {
-  for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
-    pdf.getPage(pageNum).then(page => {
-      const viewport = page.getViewport({scale: 1.5});
-      const canvas = document.createElement('canvas');
-      const context = canvas.getContext('2d');
-      canvas.height = viewport.height;
-      canvas.width = viewport.width;
-      container.appendChild(canvas);
-      page.render({canvasContext: context, viewport: viewport});
-    });
-  }
-});
+  pdfjsLib.getDocument(url).promise.then(pdf => {
+    for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+      pdf.getPage(pageNum).then(page => {
+        const viewport = page.getViewport({ scale: 1.5 });
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+        container.appendChild(canvas);
+        page.render({ canvasContext: context, viewport: viewport });
+      });
+    }
+  }).catch(err => {
+    container.innerHTML = '<p>PDF yüklenemedi. Dosya adını ve yolunu kontrol et.</p>';
+    console.error(err);
+  });
 </script>
 
 </body>
