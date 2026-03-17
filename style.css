@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ffe6f0, #ffccf2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container h1 {
+  color: #e60073;
+  font-size: 40px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 3s forwards;
+  text-shadow: 2px 2px 5px #ff99cc;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px);}
+  50% { opacity: 0.5; transform: translateY(5px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
