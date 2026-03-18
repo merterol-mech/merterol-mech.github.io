@@ -1,42 +1,70 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mert Erol Portfolio</title>
+  <title>Mert Erol — Mechanical Design Engineer</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- Navbar -->
+<body class="page-home">
+
   <header>
-    <nav>
-      <div class="nav-container">
-        <div class="logo">Mert Erol</div>
-        <div class="hamburger" id="hamburger">&#9776;</div>
-        <ul class="nav-links" id="nav-links">
-          <li><a href="index.html">Home</a></li>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">MERT<span>.EROL</span></a>
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="resume.html">Resume</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
 
-  <!-- Main Content -->
-  <main>
-    <h1>Welcome to My Portfolio</h1>
-    <p>This is a simple personal portfolio built with GitHub Pages.</p>
-  </main>
+  <div class="page-wrapper">
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-tag">Mechanical Design Engineer</div>
+        <h1>MERT<br><span class="accent">EROL</span></h1>
+        <p class="hero-subtitle">Defense · Aerospace · Unmanned Systems</p>
+        <p class="hero-desc">
+          5+ years designing precision mechanical systems for defense and aerospace — from flight control actuators on military UAVs to landing gear systems for jet trainer aircraft. Based in Ankara, available for freelance engagements worldwide.
+        </p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Years Exp.</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Industries</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">MIL</span>
+            <span class="stat-label">Standards</span>
+          </div>
+        </div>
+        <div class="hero-cta">
+          <a href="projects.html" class="btn-primary">View Projects</a>
+          <a href="contact.html" class="btn-secondary">Get In Touch</a>
+        </div>
+      </div>
+    </section>
+  </div>
 
-  <!-- Hamburger JS -->
+  <footer>
+    <p>© 2025 <span>Mert Erol</span> · Mechanical Design Engineer · Ankara, TR</p>
+  </footer>
+
   <script>
     const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
+    const menu = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => menu.classList.toggle('open'));
   </script>
 </body>
 </html>
