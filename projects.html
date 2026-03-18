@@ -1,42 +1,122 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects</title>
+  <title>Projects — Mert Erol</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- Navbar -->
+<body class="page-projects">
+
   <header>
-    <nav>
-      <div class="nav-container">
-        <div class="logo">Mert Erol</div>
-        <div class="hamburger" id="hamburger">&#9776;</div>
-        <ul class="nav-links" id="nav-links">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">MERT<span>.EROL</span></a>
+      <nav>
+        <ul id="nav-menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
           <li><a href="resume.html">Resume</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
 
-  <!-- Main Content -->
-  <main>
-    <h1>Projects</h1>
-    <p>Dummy content. Will be updated later with real projects.</p>
-  </main>
+  <div class="page-wrapper">
+    <div class="section">
+      <div class="section-header">
+        <div class="section-tag">Engineering Work</div>
+        <h1 class="section-title">Projects</h1>
+      </div>
 
-  <!-- Hamburger JS -->
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-tag">Defense · Environmental Testing</div>
+          <h3>MIL-STD-810 Rain Test System</h3>
+          <p>
+            Full system design of modular rain test chambers compliant with MIL-STD-810G/H for defense and aerospace clients. Scope includes water distribution infrastructure, nozzle placement optimization, flow and pressure control, structural support systems, and water recovery. Test specimens up to 8m × 15m × 5m.
+          </p>
+          <div class="project-badges">
+            <span class="badge">MIL-STD-810G/H</span>
+            <span class="badge">Hydromechanical Design</span>
+            <span class="badge">PTC Creo</span>
+            <span class="badge">Structural Analysis</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-tag">Aerospace · Landing Gear Systems</div>
+          <h3>Artificial Feeling Device — Jet Trainer</h3>
+          <p>
+            Designed and detailed an Artificial Feeling Device providing resistive feedback to the pilot's foot during nose wheel steering. Delivered full 3D CAD models and GD&T-compliant manufacturing drawings in CATIA V5, working within a 3DExperience PLM environment alongside stress and systems teams.
+          </p>
+          <div class="project-badges">
+            <span class="badge">CATIA V5</span>
+            <span class="badge">GD&T</span>
+            <span class="badge">3DExperience</span>
+            <span class="badge">Landing Gear</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-tag">Aerospace · Landing Gear Systems</div>
+          <h3>Uplock Equipment — Validation & Analysis</h3>
+          <p>
+            Performed tolerance stack-up analyses and strength calculations to validate the Uplock Equipment — the mechanism that keeps landing gear retracted — for a jet trainer aircraft. Ensured design integrity under operational loads and worst-case conditions per aerospace standards.
+          </p>
+          <div class="project-badges">
+            <span class="badge">Tolerance Stack-Up</span>
+            <span class="badge">Strength Calculation</span>
+            <span class="badge">CATIA V5</span>
+            <span class="badge">Aerospace Standards</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-tag">Defense · Unmanned Aviation</div>
+          <h3>Primary Flight Control Actuator — Military UAV</h3>
+          <p>
+            Served as Product Owner and lead designer for a primary flight control surface actuator on a military unmanned aerial platform. Managed the full lifecycle from concept through prototype, manufacturing process development, and qualification testing under AS9100D quality management.
+          </p>
+          <div class="project-badges">
+            <span class="badge">AS9100D</span>
+            <span class="badge">Electromechanical Actuator</span>
+            <span class="badge">Product Owner</span>
+            <span class="badge">UAV</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-tag">Aviation · Helicopter Systems</div>
+          <h3>Rotor Brake System — Light Utility Helicopter</h3>
+          <p>
+            Contributed to all phases of rotor brake system development for a light utility helicopter, from concept definition through endurance and Safety of Flight qualification testing. Responsible for mechanical design, GD&T drawings, component selection, and supplier technical coordination.
+          </p>
+          <div class="project-badges">
+            <span class="badge">Rotor Brake</span>
+            <span class="badge">Safety of Flight</span>
+            <span class="badge">Qualification Testing</span>
+            <span class="badge">Supplier Coordination</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 <span>Mert Erol</span> · Mechanical Design Engineer · Ankara, TR</p>
+  </footer>
+
   <script>
     const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
+    const menu = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => menu.classList.toggle('open'));
   </script>
 </body>
 </html>
