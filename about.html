@@ -1,42 +1,147 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About</title>
+  <title>About — Mert Erol</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- Navbar -->
+<body class="page-about">
+
   <header>
-    <nav>
-      <div class="nav-container">
-        <div class="logo">Mert Erol</div>
-        <div class="hamburger" id="hamburger">&#9776;</div>
-        <ul class="nav-links" id="nav-links">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">MERT<span>.EROL</span></a>
+      <nav>
+        <ul id="nav-menu">
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="about.html" class="active">About</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="resume.html">Resume</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
 
-  <!-- Main Content -->
-  <main>
-    <h1>About</h1>
-    <p>Dummy content. Will be updated later with real projects.</p>
-  </main>
+  <div class="page-wrapper">
+    <div class="section">
+      <div class="section-header">
+        <div class="section-tag">Who I Am</div>
+        <h1 class="section-title">About Me</h1>
+      </div>
 
-  <!-- Hamburger JS -->
+      <div class="about-grid">
+        <!-- Left: Bio + Skills -->
+        <div>
+          <div class="about-text">
+            <p>
+              I'm a <strong>Mechanical Design Engineer</strong> based in Ankara, Turkey, with over 5 years of hands-on experience across defense, aerospace, and unmanned aviation sectors.
+            </p>
+            <p>
+              My work spans the full product lifecycle — from early-stage concept development and 3D CAD modeling through to manufacturing drawing release, supplier coordination, and qualification testing. I've served as both a design contributor and a <strong>Product Owner</strong> on critical flight systems, giving me a rare combination of deep technical skill and project-level ownership.
+            </p>
+            <p>
+              I've worked in AS9100D-certified environments and delivered systems compliant with <strong>MIL-STD-810G/H</strong> and other military/aerospace standards. My designs have gone through formal qualification campaigns — including Safety of Flight testing — not just been handed off to production.
+            </p>
+            <p>
+              Now, I'm expanding into freelance work, bringing that same rigor and reliability to clients who need precision mechanical engineering without the overhead of a large firm.
+            </p>
+          </div>
+
+          <div class="skills-block">
+            <h3>CAD & PLM Tools</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">PTC Creo Parametric</span>
+              <span class="skill-tag">CATIA V5</span>
+              <span class="skill-tag">3DExperience</span>
+              <span class="skill-tag">Windchill</span>
+              <span class="skill-tag">MSC Adams</span>
+            </div>
+          </div>
+
+          <div class="skills-block" style="margin-top:1.5rem">
+            <h3>Engineering Disciplines</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">3D Model Design</span>
+              <span class="skill-tag">GD&T</span>
+              <span class="skill-tag">Tolerance Stack-Up</span>
+              <span class="skill-tag">Strength Calculations</span>
+              <span class="skill-tag">Hydromechanical Design</span>
+              <span class="skill-tag">Component Selection</span>
+              <span class="skill-tag">Configuration Management</span>
+              <span class="skill-tag">Qualification Testing</span>
+            </div>
+          </div>
+
+          <div class="skills-block" style="margin-top:1.5rem">
+            <h3>Standards & Compliance</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">AS9100D</span>
+              <span class="skill-tag">MIL-STD-810G</span>
+              <span class="skill-tag">MIL-STD-810H</span>
+              <span class="skill-tag">ISO 2768</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Experience Timeline -->
+        <div>
+          <div class="section-tag" style="margin-bottom:1.5rem">Experience</div>
+          <div class="timeline">
+
+            <div class="timeline-item">
+              <div class="timeline-date">JAN 2026 — PRESENT</div>
+              <div class="timeline-role">Mechanical Design Engineer</div>
+              <div class="timeline-company">DEICO Engineering · Ankara, TR</div>
+              <div class="timeline-desc">
+                Designing MIL-STD-810G/H compliant Rain Test Systems for defense and aerospace clients. Responsible for full system design — water distribution, nozzle optimization, flow/pressure control, structural support, and drainage — for test chambers up to 8m × 15m × 5m.
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">SEP 2024 — JAN 2026</div>
+              <div class="timeline-role">Mechanical Design Engineer</div>
+              <div class="timeline-company">TAAC Aerospace Technologies · TR</div>
+              <div class="timeline-desc">
+                Designed mechanical components for aircraft landing gear systems. Delivered detailed 3D models and manufacturing drawings for an Artificial Feeling Device and validated an Uplock Equipment through tolerance stack-up and strength analysis for a jet trainer platform. Worked in a PLM environment (3DExperience).
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">SEP 2020 — SEP 2024</div>
+              <div class="timeline-role">Mechanical Design Engineer & Product Owner</div>
+              <div class="timeline-company">ANDAR Electromechanical Systems · TR</div>
+              <div class="timeline-desc">
+                Led development of electromechanical actuators for manned and unmanned aviation under AS9100D. Served as Product Owner for a primary flight control surface actuator on a military UAV. Contributed to a rotor brake system for a light utility helicopter from concept to Safety of Flight qualification.
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">2014 — 2020</div>
+              <div class="timeline-role">B.Sc. Mechanical Engineering</div>
+              <div class="timeline-company">Bilkent University · Ankara, TR</div>
+              <div class="timeline-desc">
+                Undergraduate studies in Mechanical Engineering at one of Turkey's leading technical universities.
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 <span>Mert Erol</span> · Mechanical Design Engineer · Ankara, TR</p>
+  </footer>
+
   <script>
     const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
+    const menu = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => menu.classList.toggle('open'));
   </script>
 </body>
 </html>
