@@ -1,63 +1,105 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact</title>
+  <title>Contact — Mert Erol</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- Navbar -->
+<body class="page-contact">
+
   <header>
-    <nav>
-      <div class="nav-container">
-        <div class="logo">Mert Erol</div>
-        <div class="hamburger" id="hamburger">&#9776;</div>
-        <ul class="nav-links" id="nav-links">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">MERT<span>.EROL</span></a>
+      <nav>
+        <ul id="nav-menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="resume.html">Resume</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
-      </div>
-    </nav>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
 
-  <!-- Main Content -->
-  <main>
-    <h1>Contact Me</h1>
-    <p>Email: <a href="mailto:mert.erol1@outlook.com">mert.erol1@outlook.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/erolmert" target="_blank">linkedin.com/in/erolmert</a></p>
+  <div class="page-wrapper">
+    <div class="section">
+      <div class="section-header">
+        <div class="section-tag">Let's Work Together</div>
+        <h1 class="section-title">Get In Touch</h1>
+      </div>
 
-    <form action="https://formspree.io/f/xqeyganp" method="POST">
-      <label>
-        Your email:
-        <input type="email" name="email" required>
-      </label>
-      <label>
-        Subject:
-        <input type="text" name="subject">
-      </label>
-      <label>
-        Your message:
-        <textarea name="message" required></textarea>
-      </label>
-      <label>
-        Attachment:
-        <input type="file" name="attachment">
-      </label>
-      <button type="submit">Send</button>
-    </form>
-  </main>
+      <div class="contact-grid">
 
-  <!-- Hamburger JS -->
+        <div class="contact-info">
+          <h3>Available for Freelance</h3>
+          <p>
+            Looking for a mechanical design engineer with defense and aerospace experience? I'm available for project-based engagements — CAD modeling, GD&T drawings, tolerance analysis, system design, or technical documentation.
+          </p>
+          <div class="contact-links">
+            <a href="mailto:mert.erol1@outlook.com" class="contact-link">
+              <span class="contact-link-icon">✉</span>
+              mert.erol1@outlook.com
+            </a>
+            <a href="https://www.linkedin.com/in/erolmert" target="_blank" class="contact-link">
+              <span class="contact-link-icon">in</span>
+              linkedin.com/in/erolmert
+            </a>
+            <a href="tel:+905413727876" class="contact-link">
+              <span class="contact-link-icon">☎</span>
+              +90 541 372 78 76
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" action="https://formspree.io/f/xqeyganp" method="POST">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="jane@company.com" required>
+          </div>
+          <div class="form-group">
+            <label for="service">Project Type</label>
+            <select id="service" name="service">
+              <option value="">Select a service...</option>
+              <option value="cad">3D CAD Modeling</option>
+              <option value="drawings">Manufacturing Drawings & GD&T</option>
+              <option value="analysis">Tolerance / Stress Analysis</option>
+              <option value="system">System Design</option>
+              <option value="documentation">Technical Documentation</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell me about your project, timeline, and requirements..." required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="file">Attach a File (optional)</label>
+            <input type="file" id="file" name="file">
+          </div>
+          <button type="submit" class="btn-primary" style="width:fit-content">Send Message</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 <span>Mert Erol</span> · Mechanical Design Engineer · Ankara, TR</p>
+  </footer>
+
   <script>
     const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
+    const menu = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => menu.classList.toggle('open'));
   </script>
 </body>
 </html>
